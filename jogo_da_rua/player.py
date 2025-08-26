@@ -11,7 +11,12 @@ class Player(Turtle):
         self.setheading(90)
         self.penup()
         self.goto(STARTING_POSITION)
+        self.move_vel = 0.1
     
     def move(self):
         self.newy = self.ycor() + MOVE_DISTANCE
         self.goto(self.xcor(),self.newy)
+    
+    def reseti(self):
+        self.goto(STARTING_POSITION)
+        self.move_vel *= 0.9
