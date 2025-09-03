@@ -34,14 +34,15 @@ while game_is_on == True:
         cobra.maior()
     
     if abs(cobra.head.xcor()) > 280 or abs(cobra.head.ycor()) > 280:
-        game_is_on = False
-        placar.game_over_scrr()
+        placar.resetar()
+        cobra.reset()
     
     
     for segment in cobra.segments[1:]:
         if cobra.head.distance(segment) < 10:
-            game_is_on = False
-            placar.game_over_scrr()
+            placar.resetar()
+            cobra.reset()
+
     
     
         
